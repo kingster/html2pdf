@@ -26,6 +26,8 @@ sudo mv html2pdf /usr/local/bin/
 - Java 21 or higher (for JAR version)
 - GraalVM 21 or higher (for building native binary)
 
+#### Building
+
 ```bash
 git clone https://github.com/kingster/html2pdf.git
 cd html2pdf
