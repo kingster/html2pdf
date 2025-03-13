@@ -10,7 +10,10 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ "master" ]
+    branches: 
+      - "master"
+    tags:
+      - 'v*'
   pull_request:
     branches: [ "master" ]
 
@@ -41,7 +44,7 @@ jobs:
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: html2pdf-${{ matrix.os }}
+        name: html2pdf-${{ matrix.os == 'macos-14' && 'arm64' || 'amd64' }}
         path: |
           ./target/html2pdf
 
