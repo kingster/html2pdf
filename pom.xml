@@ -155,6 +155,9 @@
                         <buildArg>--no-fallback</buildArg>
                         <buildArg>--enable-url-protocols=https</buildArg>
                         <buildArg>-H:+ReportExceptionStackTraces</buildArg>
+                        <buildArg>--initialize-at-build-time=com.itextpdf</buildArg>
+                        <buildArg>--initialize-at-build-time=org.slf4j</buildArg>
+                        <buildArg>--initialize-at-build-time=ch.qos.logback</buildArg>
                     </buildArgs>
                 </configuration>
             </plugin>
