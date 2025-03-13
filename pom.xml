@@ -112,6 +112,7 @@
                         <configuration>
                             <shadedArtifactAttached>true</shadedArtifactAttached>
                             <shadedClassifierName>with-dependencies</shadedClassifierName>
+                            <finalName>${imageName}</finalName>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
                             <filters>
                                 <filter>
