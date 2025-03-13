@@ -48,7 +48,7 @@ public class Main implements Callable<Integer> {
     }
 
     private void generateHtmlToPdf() throws Exception {
-
+        long startTime = System.currentTimeMillis();
         String baseURI = baseDir != null ? baseDir.getAbsolutePath() : inputFile.getParent();
 
         Document inputHtml = createWellFormedHtml(inputFile);
@@ -63,7 +63,10 @@ public class Main implements Callable<Integer> {
             converterProperties
         );
         
-        System.out.println("PDF generation completed successfully!");
+        long endTime = System.currentTimeMillis();
+        double timeInSeconds = (endTime - startTime) / 1000.0;
+        System.out.printf("PDF generated successfully: %s (%.2f seconds)%n", 
+            outputFile.getName(), timeInSeconds);
     }
 
     private static Document createWellFormedHtml(File inputHTML) throws IOException {
