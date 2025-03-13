@@ -1,0 +1,26 @@
+{
+  "resources": {
+    "includes": [
+      {
+        "pattern": "\\QMETA-INF/font/\\E.*"
+      },
+      {
+        "pattern": "\\QMETA-INF/resources/font/\\E.*"
+      },
+      {
+        "pattern": "com/itextpdf/io/font/.*"
+      },
+      {
+        "pattern": "com/itextpdf/io/license/.*"
+      }
+    ]
+  },
+  "bundles": [
+    {
+      "name": "com.itextpdf.io.font.FontResources"
+    },
+    {
+      "name": "com.itextpdf.io.license.LicenseResources"
+    }
+  ]
+} 
