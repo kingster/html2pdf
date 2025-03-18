@@ -55,6 +55,7 @@ jobs:
         draft: true
         allowUpdates: true
         token: ${{ secrets.GH_TOKEN }}
+        replacesArtifacts: false
       
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
