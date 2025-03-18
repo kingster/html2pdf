@@ -31,7 +31,7 @@ jobs:
     - name: Build with Maven
       run: mvn clean package -Pnative
 
-    - name: Run avand validate
+    - name: Run and validate
       run: ./target/html2pdf --help
 
     - name: Upload Artifacts
@@ -41,12 +41,17 @@ jobs:
         path: |
           ./target/html2pdf
 
+    - name: Rename artifact
+      if: startsWith(github.ref, 'refs/tags/v')
+      run: |
+        mv ./target/html2pdf ./target/html2pdf-${{ matrix.os == 'macos-14' && 'arm64' || 'amd64' }}
+
     - name: Create Release
       if: startsWith(github.ref, 'refs/tags/v')
       uses: ncipollo/release-action@v1
       with:
         artifacts: |
-          ./target/html2pdf
+          ./target/html2pdf-*
         draft: true
         allowUpdates: true
         token: ${{ secrets.GH_TOKEN }}
